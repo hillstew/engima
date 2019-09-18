@@ -1,8 +1,3 @@
-require 'date'
-require 'securerandom'
-require './lib/encoder'
-require './lib/decoder'
-
 class Enigma
   def get_key
     SecureRandom.random_number(99999)
