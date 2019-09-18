@@ -7,17 +7,17 @@ class Encoder
     @key = key
     @shift = shift
     @letters = ("a".."z").to_a << " "
-    @encoded_message = []
   end
 
   def shift
-    @shift = Shift.new(@key, @offset).create_shift
+    Shift.new(@key, @offset).create_shift
   end
 
   def encode_message
+    encoded_message = []
     @message.each_index do |i|
       if !@letters.include?(@message[i])
-        @encoded_message.push(@message[i])
+        encoded_message.push(@message[i])
       else
         index = @letters.index(@message[i])
         rotated = nil
@@ -32,12 +32,12 @@ class Encoder
         end
 
         if rotated == nil
-          @encoded_message << @message[i]
+          encoded_message << @message[i]
         else
-          @encoded_message << rotated[index]
+          encoded_message << rotated[index]
         end
       end
     end
-    @encoded_message = @encoded_message.join
+    encoded_message.join
   end
 end
