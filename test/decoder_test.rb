@@ -1,6 +1,4 @@
 require './test/test_helper'
-require './lib/decoder'
-require './lib/shift'
 
 class DecoderTest < Minitest::Test
   def setup
