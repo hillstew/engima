@@ -1,4 +1,4 @@
-## Enimga
+## Enigma
 
 #### Functionality
 
@@ -6,7 +6,7 @@
 
 #### Object Oriented Programming
 
-3: Meets Expectations
+4: Well Above Expectations
 
 #### Test Driven Development
 
