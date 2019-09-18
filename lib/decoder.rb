@@ -3,16 +3,14 @@ require './lib/shift'
 class Decoder
   def initialize(message, key, offset)
     @message = message.downcase.split("")
-    @key = key
     @offset = offset.to_s.split("")
+    @key = key
     @shift = shift
     @letters = ("a".."z").to_a << " "
-    @decoded_message = []
   end
 
   def shift
-    @shift = Shift.new(@key, @offset)
-    @shift = @shift.create_shift
+    Shift.new(@key, @offset).create_shift
   end
 
   def decode_message
